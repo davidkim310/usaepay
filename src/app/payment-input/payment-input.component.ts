@@ -37,7 +37,7 @@ export class PaymentInputComponent implements OnInit {
     this.expired = false;
   }
   onChange(amount) {
-    console.log("amount", amount);
+    // console.log("amount", amount);
     this.model.amount = amount.amount;
   }
   public donate(){
@@ -65,7 +65,7 @@ export class PaymentInputComponent implements OnInit {
       invoice:  Math.floor(Math.random() * (99999 - 10000)) + 1 //Creates a random invoice number
       }
       this.paymentApi.post(obj).subscribe(data=>{
-        console.log("response data", data)
+        // console.log("response data", data)
         //The following will show the proper responses upon submitting payment info. Establishes booleans for HTML *ngIf
         if(data.result === "Approved"){
           this.approved = true;
@@ -74,7 +74,7 @@ export class PaymentInputComponent implements OnInit {
         } else if(data.error === "Credit card has expired." ){
           this.expired = true;
         }
-        console.log(obj)
+        // console.log(obj)
       })
   }
 }
