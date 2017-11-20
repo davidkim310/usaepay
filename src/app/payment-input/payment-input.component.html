@@ -1,0 +1,81 @@
+<h1 class="title">
+  Donate to the Small Hearts Foundation Charity</h1>
+
+<div class="inputBox">
+  <h2 class="infoHead">Credit card info</h2>
+  <div class="forma">
+    <div class="form-group">
+      <label for="name">Name as printed on card
+        <span class="asterisk">*</span>
+      </label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name" placeholder="Your name.."
+        #name="ngModel">
+      <div [hidden]="name.valid || name.pristine" class="alert alert-danger validation">
+        Name required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="cardNum">Card Number
+        <span class="asterisk">*</span>
+      </label>
+      <input class="form-control" type="text" (click)="clickNum()" maxlength="19" size="19" required [(ngModel)]="model.cardNum"
+        name="cardNum" placeholder="Your card number.." #cardNum="ngModel">
+      <div [hidden]="cardNum.valid || cardNum.pristine" class="alert alert-danger validation">
+        Card required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exp">Expiration Date
+        <span class="asterisk">*</span>
+      </label>
+      <input class="form-control" type="text" (click)="clickExp()" placeholder="MM/YY" [textMask]="{mask: maskDate}" required [(ngModel)]="model.exp"
+        name="exp" #exp="ngModel">
+      <div [hidden]="exp.valid || exp.pristine" class="alert alert-danger validation">
+        Expiration required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="cvcNum">CVC
+        <span class="asterisk">*</span>
+      </label>
+      <input class="form-control cvc" type="text" maxlength="4" size="4" required [(ngModel)]="model.cvc" name="cvc" placeholder="Your cvc number.."
+        #cvc="ngModel">
+      <div [hidden]="cvc.valid || cvc.pristine" class="alert alert-danger validation">
+        Cvc required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="address">Billing Address
+        <span class="asterisk">*</span>
+      </label>
+      <input class="form-control address" type="text" required [(ngModel)]="model.address" name="address" placeholder="Your address"
+        #address="ngModel">
+      <div [hidden]="address.valid || address.pristine" class="alert alert-danger validation">
+        Address required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="zipCode">Billing Zip Code
+        <span class="asterisk">*</span>
+      </label>
+      <input class="form-control zipCode" type="text" maxlength="5" size="5" required [(ngModel)]="model.zipCode" name="zipCode"
+        placeholder="Your zip code" #zipCode="ngModel">
+      <div [hidden]="zipCode.valid || zipCode.pristine" class="alert alert-danger validation">
+        Zip code required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="country">Donation Amount
+        <span class="asterisk">*</span>
+      </label>
+      <select (ngModelChange)="onChange($event)" [(ngModel)]="chosenAmount">
+        <option *ngFor="let a of amounts" [ngValue]="a"> ${{a.amount}} </option>
+      </select>
+      <input *ngIf="model.amount === 'Custom'" type="text" class="form-control" name="custom" placeholder="$" [(ngModel)]="custom">
+    </div>
+    <button class="btn btn-success submit" type="submit" value="Submit" (click)="donate()">Submit</button>
+    <div class="approved" *ngIf="approved">"Approved"</div>
+    <div class="invalid" *ngIf="invalidCard">"Invalid Card"</div>
+    <div class="expired" *ngIf="expired">"Card is Expired"</div>
+  </div>
+</div>

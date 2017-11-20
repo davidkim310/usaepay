@@ -1,0 +1,90 @@
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+input {
+    width: 20vw;
+}
+input[type=text], select {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+select {
+    width: 20vw;
+}
+
+.asterisk{
+    margin-left: 5px;
+    color:red;
+}
+.approved {
+    margin-left: 2vw;
+    margin-top: -3vw;
+    color: white;
+    font-size: 18px;
+    background: green;
+    width: 20vw;
+    text-align: center;
+    height: 4vw;
+    padding: 1vw;
+}
+.forma {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1vw;
+}
+.form-group{
+    margin-top: -1vw;
+}
+.infoHead {
+    margin-left: 20vw;
+}
+.inputBox {
+    width: 55vw;
+    margin-left: 20vw;
+}
+.invalid {
+    margin-left: 2vw;
+    margin-top: -3vw;
+    color: white;
+    font-size: 18px;
+    background: red;
+    width: 20vw;
+    text-align: center;
+    height: 4vw;
+    padding: 1vw;
+}
+.expired {
+    margin-left: 2vw;
+    margin-top: -3vw;
+    color: white;
+    font-size: 18px;
+    background: red;
+    width: 20vw;
+    text-align: center;
+    height: 4vw;
+    padding: 1vw;
+}
+.submit {
+    height: 3vw;
+    margin-top: 2vw;
+    margin-left: 2vw;
+    width: 20vw;
+}
+.title {
+    margin-left: 20vw;
+}
+.validation {
+    width: 10vw;
+    height: 0vw;
+    padding-top: 0vw;
+}
