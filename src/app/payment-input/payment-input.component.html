@@ -71,7 +71,7 @@
       <select (ngModelChange)="onChange($event)" [(ngModel)]="chosenAmount">
         <option *ngFor="let a of amounts" [ngValue]="a"> ${{a.amount}} </option>
       </select>
-      <input *ngIf="model.amount === 'Custom'" type="text" class="form-control" name="custom" placeholder="$" [(ngModel)]="custom">
+      <input *ngIf="model.amount === 'USD Custom Amount'" type="text" class="form-control" name="custom" placeholder="$" [(ngModel)]="custom">
     </div>
     <button class="btn btn-success submit" type="submit" value="Submit" (click)="donate()">Submit</button>
     <div class="approved" *ngIf="approved">"Approved"</div>
